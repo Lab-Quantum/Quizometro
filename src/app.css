@@ -1,0 +1,30 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("./assets/bg.jpg");
+    background-size: cover;
+}
+
+.App-header{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
