@@ -1,2 +1,2 @@
-Inicial config [Preview here](https://quantum-new-project.netlify.app).
+[Preview here](https://quantum-new-project.netlify.app).
 
