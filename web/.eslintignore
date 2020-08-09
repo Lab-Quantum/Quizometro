@@ -1,0 +1,6 @@
+**/*.svg
+**/*.png
+**/*.css
+src/components/StockTable/TableIcons.js
+build
+src/DataTable
