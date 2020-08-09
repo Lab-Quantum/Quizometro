@@ -1,0 +1,22 @@
+{
+    "name": "quizometro/server",
+    "description": "Quiz",
+    "authors": [
+        {
+            "name": "Lab-Quantum",
+            "email": "labquantum@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4.3"
+        },
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "System\\": "src/System",
+            "User\\": "src/User"
+        }
+    }
+}
