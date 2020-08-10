@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -10,7 +10,6 @@ import EditQuiz from './pages/EditQuiz';
 
 const Routes = () => {
     return(
-        <BrowserRouter>
             <Switch>
                 <Route component={Home} path="/" exact />
                 <Route component={Login} path="/login" />
@@ -18,8 +17,6 @@ const Routes = () => {
                 <Route component={ViewQuiz} path="/viewQuiz" />
                 <Route component={EditQuiz} path="/editQuiz" />
             </Switch>
-        </BrowserRouter>
-
     );
 }
 
