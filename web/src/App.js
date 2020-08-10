@@ -3,6 +3,8 @@ import Logo from "./assets/QuantumLogo.png";
 
 import Slide from '@material-ui/core/Slide';
 
+import Routes from './routes.js';
+
 import "./app.css";
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
       ) : (
         <Slide direction="up" in={setSplash} mountOnEnter unmountOnExit>
           <div className="content">
-            Router Component Here  
+          <Routes />
           </div> 
         </Slide>
       )
