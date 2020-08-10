@@ -1,9 +1,6 @@
 .App{
     width: 100vw;
     height: 100vh;
-
-    background-image: url("./assets/bg.jpg");
-    background-size: cover;
 }
 
 .App-header{
@@ -14,7 +11,23 @@
     justify-content: center;
     align-items: center;
 
+    background-image: url("./assets/bg.jpg");
+    background-size: cover;
+}
+
+.App-header img {
+    cursor: pointer;
     animation: float 6s ease-in-out infinite;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes float {
@@ -22,7 +35,7 @@
 		transform: translatey(0px);
 	}
 	50% {
-		transform: translatey(-20px);
+		transform: translatey(-10px);
 	}
 	100% {
 		transform: translatey(0px);
