@@ -1,0 +1,45 @@
+# ./docker-compose.yml
+
+version: '3'
+
+services: 
+  db:
+    image: mysql
+    environment: 
+      MYSQL_USER: root
+      MYSQL_DATABASE: quizometro
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "9906:3306"
+    networks:
+      - mysql-compose-network  
+      
+  server:
+    image: php:7.4-cli
+    container_name: server
+    depends_on: 
+      - db
+    volumes: 
+      - ./php/:/var/www/html
+    ports:
+      - "8000:80"
+    stdin_open: true
+    tty: true
+
+  react-web:
+    build: 
+      context: web
+      dockerfile: ./Dockerfile
+    command: 'npm run start'
+    environment: 
+      - NODE_ENV=development
+    ports:
+      - "3030:3000"
+    volumes: 
+      - '.:/web'
+      - '/web/node_modules'
+
+networks: 
+  mysql-compose-network:
+    driver: bridge
