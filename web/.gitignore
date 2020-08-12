@@ -26,4 +26,4 @@ build/static/js/*.map
 build/
 package-lock.json
 
-.mp4
+js.mp4
