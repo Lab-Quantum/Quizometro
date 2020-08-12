@@ -1,4 +1,5 @@
-/* eslint no-use-before-define: 0 */
+/* eslint-disable */
+
 describe('Teste de Rotas', () => {
     it('Home', () => {
       cy.visit('/');
