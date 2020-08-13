@@ -17,28 +17,18 @@ services:
       
   server:
     image: php:7.4-cli
+    build:
+      dockerfile: Dockerfile
+      context: server
     container_name: server
     depends_on: 
       - db
     volumes: 
-      - ./php/:/var/www/html
+      - ./server/:/var/www/html
     ports:
       - "8000:80"
     stdin_open: true
     tty: true
-
-  react-web:
-    build: 
-      context: web
-      dockerfile: ./Dockerfile
-    command: 'npm run start'
-    environment: 
-      - NODE_ENV=development
-    ports:
-      - "3030:3000"
-    volumes: 
-      - '.:/web'
-      - '/web/node_modules'
 
 networks: 
   mysql-compose-network:
