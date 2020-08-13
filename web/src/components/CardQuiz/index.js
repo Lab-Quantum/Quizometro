@@ -24,6 +24,7 @@ const CardQuiz = () => {
                     <Button fullWidth variant="contained" color="primary" disableElevation>Cabeção da Malhação</Button>
                 </div>
             </div>
+            <div className="identifier">1</div>
         </div>
     )
 }

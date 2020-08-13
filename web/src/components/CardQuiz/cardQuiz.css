@@ -44,10 +44,29 @@
 }
 
 
-.alternative{
+.cardQuiz .alternatives .alternative{
     width: 80%;
     margin-bottom: 20px;
 
     display:flex;
     justify-content: center;
+}
+
+.identifier{
+    width: 45px;
+    height: 45px;
+
+    background-image: linear-gradient(to right bottom, #10a4ff, #319cfa, #4494f5, #538cee, #6083e7);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    color:#fff;
+
+    border-radius: 100%;
+
+    position: fixed;
+    top: 25px;
+    right: 20px;
 }
