@@ -1,0 +1,53 @@
+.cardQuiz{
+    width: 80%;
+
+    background-color: #fff;
+
+    box-shadow: var(--shadow);
+
+    border-radius: 20px;
+
+    padding-bottom: 50px;
+}
+
+.cardQuiz .pictureContainer{
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.cardQuiz .pictureContainer .QuizImage{
+    max-height: 170px;
+}
+
+.cardQuiz .questionText{
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #3f3f3f;
+
+}
+
+.cardQuiz .alternatives{
+    width: 100%;
+
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.alternative{
+    width: 80%;
+    margin-bottom: 20px;
+
+    display:flex;
+    justify-content: center;
+}

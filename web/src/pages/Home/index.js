@@ -1,8 +1,14 @@
 import React from 'react';
+import './home.css'
+
+
+import CardQuiz from '../../components/CardQuiz';
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <div className="home">
+            <CardQuiz/>
+        </div>
     );
 }
 
