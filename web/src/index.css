@@ -15,6 +15,7 @@ code {
 
 :root {
   --main-color: #10a4ff;
-  --shadow: 0 10px 10px -15px rgba(9,9,16,.2)
+  --shadow: 0 10px 10px -15px rgba(9,9,16,.2);
+  --fade: linear-gradient(to right bottom, #10a4ff, #319cfa, #4494f5, #538cee, #6083e7);
 }
   

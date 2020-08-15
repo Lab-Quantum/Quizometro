@@ -14,7 +14,7 @@
     width: 45px;
     height: 45px;
 
-    background-image: linear-gradient(to right bottom, #10a4ff, #319cfa, #4494f5, #538cee, #6083e7);
+    background-image: var(--fade);
 
     display:flex;
     justify-content: center;
