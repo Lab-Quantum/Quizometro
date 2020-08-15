@@ -11,3 +11,7 @@ cp local.php.sample local.php
 composer install
 composer dump-autoload -o
 ```
+
+### [Server endpoints](http/).
+
+You can run it with REST Client extension in VSCode or import in Postman/Insomnia.
