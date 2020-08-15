@@ -3,15 +3,17 @@
 namespace System;
 
 class Router {
-    public $routes = array();
+    private $routes = array();
     public $params = array();
     public $request = array();
+    public $headers = array();
 
     public function __construct() {
-        return true;
+        self::setRequest();
+        self::setHeaders();
     }
 
-    public function add($method = 'get', $destiny, $callback) {
+    public function add($method = 'get', $destiny, $callback) : void {
         array_push($this->routes, array(
             "method" => $method,
             "destiny" => $destiny,
@@ -19,7 +21,7 @@ class Router {
         ));
     }
 
-    public function run() {
+    public function run() : void {
         foreach($this->routes as $route) {
             if(self::matchMethod($route["method"]) && self::matchDestiny($route["destiny"])) {
                 self::startRoute($route["callback"]);
@@ -61,9 +63,11 @@ class Router {
             return true;
         }
 
-        foreach($route as $method) {
-            if($route == $request) {
-                return true;
+        if(is_array($route)) {
+            foreach($route as $method) {
+                if($method == $request) {
+                    return true;
+                }
             }
         }
 
@@ -71,16 +75,22 @@ class Router {
     }
 
     private function startRoute($callback) : void {
-        $callbackParams = self::getCallbackParams($callback); 
-
-        echo $callback();
+        echo $callback(
+            $this->params,
+            $this->request,
+            $this->headers
+        );
     }
 
     private function addParams($name, $value) : void {
         $this->params += array($name => $value);
     }
 
-    private function getCallbackParams($callback) : array {
-       //Pegar parametros do callback
+    private function setRequest() : void {
+       $this->request = count($_POST) > 0 ? (array) $_POST : (array) json_decode(file_get_contents("php://input"));
+    }
+
+    private function setHeaders() : void {
+       $this->headers = apache_request_headers();
     }
 }

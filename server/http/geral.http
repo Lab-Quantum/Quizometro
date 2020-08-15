@@ -1,0 +1,13 @@
+GET http://localhost/quizometro/server
+
+###
+
+GET http://localhost/quizometro/server/test/5
+
+###
+
+POST http://localhost/quizometro/server/test/5
+
+{
+  "id": 10
+}
