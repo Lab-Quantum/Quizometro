@@ -11,3 +11,6 @@ POST http://localhost/quizometro/server/test/5
 {
   "id": 10
 }
+###
+
+GET http://localhost/quizometro/server/invalid

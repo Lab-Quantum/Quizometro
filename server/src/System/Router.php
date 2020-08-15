@@ -3,10 +3,12 @@
 namespace System;
 
 class Router {
-    private $routes = array();
     public $params = array();
     public $request = array();
     public $headers = array();
+
+    private $routes = array();
+    private $statusCode = 200;
 
     public function __construct() {
         self::setRequest();
@@ -75,11 +77,17 @@ class Router {
     }
 
     private function startRoute($callback) : void {
-        echo $callback(
-            $this->params,
-            $this->request,
-            $this->headers
+        $response = $callback( 
+            $this->params, 
+            $this->request, 
+            $this->headers 
         );
+
+        http_response_code($this->statusCode);
+
+        echo json_encode($response, JSON_NUMERIC_CHECK);
+
+        die();
     }
 
     private function addParams($name, $value) : void {
@@ -92,5 +100,9 @@ class Router {
 
     private function setHeaders() : void {
        $this->headers = apache_request_headers();
+    }
+
+    public function setStatusCode(int $status) : void {
+        $this->statusCode = $status;
     }
 }
