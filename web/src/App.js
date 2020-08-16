@@ -14,18 +14,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {splash ? (
-          <header className="App-header">
-            <img onClick={() => setSplash(false)} src={Logo} alt="Quantum Logo" />
-          </header>
-        ) : (
-          <Slide direction="up" in={setSplash} mountOnEnter unmountOnExit>
-            <div className="content">
-            <Routes />
-            </div> 
-          </Slide>
-        )
-      }
+        <Slide direction="up" in={setSplash} mountOnEnter unmountOnExit>
+          <div className="content">
+          <Routes />
+          </div> 
+        </Slide>
       </div>
     </BrowserRouter>
   );

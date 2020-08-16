@@ -1,12 +1,14 @@
 .cardQuizFeed{
-    width: 300px;
-    height: 300px;
+    min-width: 290px;
+    height: 280px;
 
     background-color: #fff;
 
     border-radius: 20px;
 
     box-shadow: var(--shadow);
+
+    margin-right: 20px;
 }
 
 .cardQuizFeed .content{
