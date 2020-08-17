@@ -1,0 +1,44 @@
+name: Quantum Release
+on:  
+  push:
+    branches: [ master ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:      
+    - name: Checkout Master
+      uses: actions/checkout@master
+      with:
+         submodules: true
+         fetch-depth: 0   
+    - name: Set outputs
+      id: vars
+      run: echo "::set-output name=git_tag::$(git describe --abbrev=0 --tags)"
+    - name: pre-build
+      run: npm install
+    - name: build production
+      run: npm run build
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBNECTONTOKEN }}
+      with:
+          tag_name: ${{ steps.vars.outputs.git_tag }}
+          release_name: Release v. ${{ steps.vars.outputs.git_tag }}
+          body: Release versão ${{ steps.vars.outputs.git_tag }}
+          draft: false
+          prerelease: false
+    - name: Zip Release - Production
+      uses: TheDoctor0/zip-release@v0.3.0
+      with:
+        filename: quizometro.zip
+        path: ./build
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.GITHUBNECTONTOKEN }}
+        file: ./quizometro.zip
+        asset_name: quizometro.zip
+        tag: ${{ steps.vars.outputs.git_tag  }}
+        overwrite: false

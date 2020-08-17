@@ -1,0 +1,83 @@
+.cardQuiz{
+    width: 90%;
+
+    background-color: #fff;
+
+    box-shadow: var(--shadow);
+
+    border-radius: 20px;
+
+    padding-bottom: 50px;
+}
+
+.cardQuiz .identifier{
+    width: 45px;
+    height: 45px;
+
+    background-image: var(--fade);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    color:#fff;
+
+    border-radius: 100%;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+.cardQuiz .pictureContainer{
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.cardQuiz .pictureContainer .QuizIlustration{
+    max-height: 170px;
+}
+
+.cardQuiz .questionText{
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #3f3f3f;
+
+}
+
+.cardQuiz .alternatives{
+    width: 100%;
+
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.cardQuiz .alternatives .alternative{
+    width: 80%;
+    margin-bottom: 20px;
+
+    display:flex;
+    justify-content: center;
+}
+
+.MuiButton-contained{
+    background-color: #fff !important;
+    color: #3f3f3f !important;
+
+    border: solid 2px #f5f5f5 !important;
+    border-radius: 10px !important;
+
+    box-shadow: var(--shadow) !important;
+
+    text-transform: none !important;
+}
