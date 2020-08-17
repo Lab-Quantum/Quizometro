@@ -1,6 +1,6 @@
 {
   "name": "Quizometro",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
