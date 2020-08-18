@@ -24,12 +24,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "./node_modules/.bin/eslint . --fix",
-      "git add"
-    ],
-    "src/**/*.scss": [
-      "stylelint --syntax scss --fix",
+    "*.js": [
+      "make lint",
       "git add"
     ]
   },
