@@ -24,9 +24,10 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "make lint",
-      "git add"
+    "src/**/*.{js,jsx,ts,tsx,json,css}": [
+        "prettier --write",
+        "eslint --fix src/",
+        "git add"
     ]
   },
   "scripts": {
