@@ -1,0 +1,5 @@
+GET http://localhost/quizometro/server/sign/facebook
+###
+GET http://localhost/quizometro/server/sign/twitter
+###
+GET http://localhost/quizometro/server/sign/google
